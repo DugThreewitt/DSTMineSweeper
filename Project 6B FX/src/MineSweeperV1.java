@@ -437,7 +437,7 @@ public class MineSweeperV1 extends Application
 	
 	private Cell [][] placeBombs(boolean [][] bombs, GameButton [][] b, Cell [][] c, Text [][] t)
 	{
-		
+		//set images for bomb in here
 		for(int i = 0; i < c.length; i++)
 			for(int j = 0; j < c[0].length; j++)
 			{
@@ -542,147 +542,11 @@ public class MineSweeperV1 extends Application
 					{
 						continue;
 					}
-			}
-			
+			}			
 		}
-		
-		/*try
-		{
-			if(gameButton.getText().equals(" "))
-			{
-				// Expands array interior, not edges
-				if((xPos - 1) >= 0 && (yPos - 1) >= 0 && (xPos + 1) <= (b.length - 1) && (yPos + 1) <= (b[0].length))
-				{
-					for(int i = -1; i < 2; i++)
-						for(int j = -1; j < 2; j++)
-						{
-							if(b[xPos + i][yPos + j].isVisible())
-							{
-								expand(b, b[xPos + i][yPos + j]);
-							}
-						}
-				}
-				// Expands top left corner
-				if(xPos == 0 && yPos == 0)
-				{
-					for(int i = 0; i < 2; i++)
-						for(int j = 0; j < 2; j++)
-						{
-							if(b[xPos + i][yPos + j].isVisible())
-							{
-								expand(b, b[xPos + i][yPos + j]);
-							}
-						}
-				}
-				// Expands top right corner
-				if(xPos == 0 && yPos == (b[0].length - 1))
-				{
-					for(int i = 0; i < 2; i++)
-						for(int j = -1; j < 1; j++)
-						{
-							if(b[xPos + i][yPos + j].isVisible())
-							{
-								expand(b, b[xPos + i][yPos + j]);
-							}
-						}
-				}
-				// Expands bottom left Corner
-				if(xPos == (b.length - 1) && yPos == 0)
-				{
-					for(int i = -1; i < 1; i++)
-						for(int j = 0; j < 2; j++)
-						{
-							if(b[xPos + i][yPos + j].isVisible())
-							{
-								expand(b, b[xPos + i][yPos + j]);
-							}
-						}
-				}
-				// Expands bottom Right Corner
-				if(xPos == (b.length - 1) && yPos == (b[0].length - 1))
-				{
-					for(int i = -1; i < 1; i++)
-						for(int j = -1; j < 1; j++)
-						{
-							if(b[xPos + i][yPos + j].isVisible())
-							{
-								expand(b, b[xPos + i][yPos + j]);
-							}
-						}
-				}
-				// Expands top row
-				if(xPos == 0  && (yPos + 1) <= (b[0].length - 1))
-				{
-					for(int i = 0; i < 2; i++)
-						for(int j = -1; j < 2; j++)
-						{
-							if(b[xPos + i][yPos + j].isVisible())
-							{
-								expand(b, b[xPos + i][yPos + j]);
-							}
-						}
-				}
-				// Expands left Column
-				if((xPos - 1) >= 0  && yPos == 0)
-				{
-					for(int i = -1; i < 2; i++)
-						for(int j = 0; j < 2; j++)
-						{
-							if(b[xPos + i][yPos + j].isVisible())
-							{
-								expand(b, b[xPos + i][yPos + j]);
-							}
-						}
-				}
-				// Expands Right Column
-				if((xPos - 1) >= 0  && yPos == (b[0].length - 1))
-				{
-					for(int i = -1; i < 2; i++)
-						for(int j = -1; j < 1; j++)
-						{
-							if(b[xPos + i][yPos + j].isVisible())
-							{
-								expand(b, b[xPos + i][yPos + j]);
-							}
-						}
-				}
-				// Expands bottom row
-				if(xPos == (b.length - 1)  && (yPos + 1) <= (b[0].length - 1))
-				{
-					for(int i = -1; i < 2; i++)
-						for(int j = -1; j < 2; j++)
-						{
-							if(b[xPos + i][yPos + j].isVisible())
-							{
-								expand(b, b[xPos + i][yPos + j]);
-							}
-						}
-				}
-			}
-		}
-		catch(ArrayIndexOutOfBoundsException ex)
-		{
-			
-		}*/
-		
-		
-
 	}
 	
-/*	private void handleGameClick(GameButton [][] b, Cell [][] c)
-	{
-	//	int x = b.getXPos();
-	//	b[x][y].setVisible(false);
-		
-	//	if(c[x][y].getToken() == 'M')
-	//	{
-	//		b = showAll(b);
-	//	}
-		
-	//	expand(b, c, x, y);
-		
-		
-	}*/
+
 	/* *****************************************************************************
 	* Name    : handleShowClick 
 	* Purpose : listens for click to ShowBombs
@@ -695,17 +559,7 @@ public class MineSweeperV1 extends Application
 		showBombs(btGame, c);
 	}
 	
-/*	 *****************************************************************************
-	* Name    : handleBombClick 
-	* Purpose : listens for click on a bomb and showAll is called
-	* Inputs  : 2D button array
-	* Outputs : none
-	* ****************************************************************************
-	private void handleButtonClick(GameButton [][] btGame)
-	{
 
-			showAll(btGame);
-	}*/
 	
 	/* *****************************************************************************
 	* Name    : handleStartClick 
@@ -728,11 +582,7 @@ public class MineSweeperV1 extends Application
 			
 		bt = showNone(bt);
 		bombs = setBombs(bombs);
-		c = placeBombs(bombs, bt, c, t);
-		//findNeighbors(c, t, 0, 0);
-		
-		
-		
+		c = placeBombs(bombs, bt, c, t);		
 	}
 	
 }
